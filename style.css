@@ -58,6 +58,7 @@ input {
 #tip-custom input {
   box-sizing: border-box;
   width: 100%;
+  text-transform: uppercase;
 }
 .tips {
   background: #00494d;
@@ -126,4 +127,56 @@ input {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+@media only screen and (min-width: 910px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  input {
+    width: 415px;
+    padding: 9px;
+    background-position: 17px 18px;
+  }
+  .tip-calculator {
+    flex-direction: row;
+    width: 990px;
+    border-radius: 1.4rem;
+    padding: 2.3rem;
+    height: 480px;
+  }
+  .part-one {
+    margin-top: 1rem;
+    margin-left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .bill-input {
+    margin-bottom: 3.4rem;
+  }
+  .tip {
+    grid-template-columns: repeat(3, 135px);
+    row-gap: 1rem;
+    column-gap: 17px;
+    margin-bottom: 3.4rem;
+  }
+  .tips {
+    height: 55px;
+  }
+  .result {
+    margin-left: auto;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    padding: 48px 38px;
+  }
+  .amount {
+    font-size: 55px;
+  }
+  .reset {
+    padding: 13px 0 13px 0;
+    margin-top: auto;
+  }
 }
