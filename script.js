@@ -21,7 +21,7 @@ customInput.value = null;
 
 let billValue = 0.0;
 let peopleValue = 1;
-let tipValue = 0;
+let tipValue = 0.15;
 
 // Adicionando os eventos
 
@@ -71,15 +71,11 @@ function handleClick(event) {
 }
 
 function tipCalculate() {
-  if (peopleInput.value == 1) {
-    tipPerPerson.innerHTML = "R$" + (tipValue * billValue).toFixed(2);
-    totalPerPerson.innerHTML =
-      "R$" + (tipValue * billValue + billValue).toFixed(2);
-  } else {
-    tipPerPerson.innerHTML =
-      "R$" + (tipValue * billValue) / peopleValue.toFixed(2);
-    totalPerPerson.innerHTML =
-      "R$" + (tipValue * billValue + billValue) / peopleValue.toFixed(2);
+  if (peopleInput.value >= 1) {
+    let tipAmount = (billValue * tipValue) / peopleValue;
+    let total = (billValue + tipAmount) / peopleValue;
+    tipPerPerson.innerHTML = "R$" + tipAmount.toFixed(2);
+    totalPerPerson.innerHTML = "R$" + total.toFixed(2);
   }
 }
 
